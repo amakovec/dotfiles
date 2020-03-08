@@ -89,9 +89,6 @@ else
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-" LaTeX syntax highlighting
-Plug 'lervag/vimtex'
-
 " Indicate indent levels with vertical lines
 Plug 'nathanaelkane/vim-indent-guides'
 
@@ -115,30 +112,26 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" markdown syntax highlighting
-Plug 'plasticboy/vim-markdown'
-
 " pandoc integration
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-
 " TODO: is this necessary? was this just required by pandoc?
-" extended % matching
-Plug 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/matchit.zip'  " extended % matching
 
-" javascript syntax highlighting
-Plug 'pangloss/vim-javascript'
+" Syntax highlighting
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Plug 'plasticboy/vim-markdown'  " markdown
+Plug 'pangloss/vim-javascript'  " javascript
+Plug 'lervag/vimtex'            " LaTeX
 
-" wal colorscheme
-Plug 'dylanaraps/wal.vim'
-
-" pencil colorscheme
-Plug 'reedes/vim-colors-pencil'
-
-" solarized colorscheme
-Plug 'altercation/vim-colors-solarized'
+" Colorschemes
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Plug 'dylanaraps/wal.vim'               " wal integration
+Plug 'reedes/vim-colors-pencil'         " prose
+Plug 'altercation/vim-colors-solarized' " solarized
 
 call plug#end()
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 " Colorscheme
