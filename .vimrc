@@ -142,7 +142,9 @@ set guifont=Monospace\ Regular\ 14  " set gvim font
 colorscheme solarized
 "colorscheme wal
 "colorscheme pencil
-"let g:solarized_termcolors=256
+if has('gui_running') == 0
+    let g:solarized_termcolors=256
+endif
 
 set background=light
 "set background=dark
