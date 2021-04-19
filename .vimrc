@@ -40,7 +40,7 @@ set confirm                 " If :q without saving, ask if wish to :w before :q
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype indent on  " enable loading the indent file for specific filetypes
 
-set tabstop=8       " set <Tab> characters to appear as 8 spaces
+set tabstop=4       " set <Tab> characters to appear as 8 spaces
 set softtabstop=4   " set 4 spaces to be treated as a 'virtual <Tab>'
 set shiftwidth=4    " number of spaces inserted when <Tab> is pressed
 set expandtab       " When <Tab> is pressed, insert spaces (# defined in shiftwidth) instead of a <Tab> character
@@ -93,7 +93,7 @@ endif
 Plug 'nathanaelkane/vim-indent-guides'
 
 " Linter ("Asynchronous Lint Engine")
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " file tree
 Plug 'scrooloose/nerdtree'
@@ -107,6 +107,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " trailing whitespace highlighting
 Plug 'ntpeters/vim-better-whitespace'
+" :StripWhitespace to remove whitespace
 
 " snippets
 Plug 'SirVer/ultisnips'
@@ -174,7 +175,23 @@ let g:deoplete#enable_at_startup = 1
 " NERDTree
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let g:mapleader = '-'
-map <leader>r :NERDTreeFind<cr>
+"map <leader>r :NERDTreeFind<cr>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * silent NERDTreeMirror
+
+" Exit Vim if NERDTree is the only window left in the tab.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
 " Ignore .pyc files
 let g:NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
@@ -189,3 +206,52 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " ALE
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "let g:ale_python_pylint_options = '--max-line-length=79'   " set max line length
+
+" Change font size quickly
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
+let s:minfontsize = 6
+let s:maxfontsize = 24
+let s:stockguifont=&guifont
+
+function! AdjustFontSize(amount)
+  if (has("gui_gtk2") || has("gui_gtk3"))  && has("gui_running")
+    let fontname = substitute(&guifont, s:pattern, '\1', '')
+    let cursize = substitute(&guifont, s:pattern, '\2', '')
+    let newsize = cursize + a:amount
+    if (newsize >= s:minfontsize) && (newsize <= s:maxfontsize)
+      let newfont = fontname . newsize
+      let &guifont = newfont
+    endif
+    if ((a:amount > 0) || (newsize >= s:minfontsize)) && ((a:amount < 0) || (newsize <= s:maxfontsize))
+      let newfont = fontname . newsize
+      let &guifont = newfont
+    endif
+  else
+    echoerr "You need to run the GTK2 or GTK3 version of Vim to use this function."
+  endif
+endfunction
+
+function! LargerFont()
+    call AdjustFontSize(1)
+endfunction
+command! LargerFont call LargerFont()
+
+function! SmallerFont()
+    call AdjustFontSize(-1)
+endfunction
+command! SmallerFont call SmallerFont()
+
+function! ResetFont()
+    let &guifont = s:stockguifont
+endfunction
+command! ResetFont call ResetFont()
+
+map <C-=> :LargerFont<cr>
+map <C--> :SmallerFont<cr>
+map <C-0> :ResetFont<cr>
+
+" working directory improvements
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"set autochdir
+autocmd BufEnter * silent! lcd %:p:h " may provide better results than the above
