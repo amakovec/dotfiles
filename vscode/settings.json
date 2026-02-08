@@ -1,0 +1,221 @@
+{
+    "workbench.colorTheme": "Quiet Light",
+    "telemetry.telemetryLevel": "off",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "rewrap.wrappingColumn": 120,
+    "autoDocstring.docstringFormat": "sphinx",
+    "cSpell.userWords": [
+        "amakovec",
+        "makovec",
+        "blinky",
+        "bootloader",
+        "breadboarded",
+        "datasheet",
+        "fabs",
+        "microcontroller",
+        "NTSC",
+        "perfboard",
+        "UART"
+    ],
+    "explorer.confirmDelete": false,
+    "[markdown]": {
+        "editor.tabSize": 2,
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "other": "off",
+            "comments": "off",
+            "strings": "off"
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.blame.editorDecoration.enabled": false,
+    "git.blame.statusBarItem.enabled": true,
+    "python.languageServer": "Pylance",
+    "autopep8.args": ["--max-line-length=120"],
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off",
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "files.autoSaveDelay": 1000,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "powershell.codeFormatting.whitespaceBetweenParameters": true,
+    "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.sideBar.location": "right",
+    "editor.minimap.enabled": false,
+    "explorer.openEditors.visible": 7,
+    "explorer.openEditors.minVisible": 7,
+    "editor.fontLigatures": true,
+    "editor.detectIndentation": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.matchBrackets": "always",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.wordWrap": "on",
+    "editor.lineNumbers": "relative",
+    "editor.renderLineHighlight": "all",
+    "editor.scrollBeyondLastLine": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+    "explorer.compactFolders": false,
+    "explorer.autoReveal": true,
+    "window.titleBarStyle": "custom",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.suggestSelection": "first",
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.snippetSuggestions": "top",
+    "editor.hover.delay": 300,
+    "editor.hover.enabled": "on",
+    "zenMode.fullScreen": false,
+    "zenMode.hideActivityBar": true,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": true,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
+    "prettier.printWidth": 100,
+    "gitlens.codeLens.enabled": false,
+    "editor.rulers": [120],
+    "editor.renderWhitespace": "all",
+    "editor.guides.bracketPairs": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "workbench.editor.enablePreview": false,
+    "flake8.args": ["--max-line-length=120"],
+    "black-formatter.args": ["--line-length", "120"],
+    "python.analysis.typeCheckingMode": "standard",
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "[ansible]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+    },
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.quickSuggestions": {
+            "strings": true,
+            "other": true,
+            "comments": false
+        }
+    },
+    "files.associations": {
+        "*.yml": "ansible",
+        "*.yaml": "ansible"
+    },
+    "[shellscript]": {
+        "files.eol": "\n",
+        "editor.defaultColorDecorators": "never",
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "shellformat.flag": "-i 2 -ci -bn",
+    "shellcheck.enable": true,
+    "shellcheck.useWorkspaceRootAsCwd": true,
+    "shellcheck.run": "onSave",
+    "powershell.codeFormatting.preset": "OTBS",
+    "powershell.codeFormatting.alignPropertyValuePairs": true,
+    "powershell.codeFormatting.ignoreOneLineBlock": true,
+    "powershell.codeFormatting.newLineAfterOpenBrace": true,
+    "powershell.codeFormatting.newLineAfterCloseBrace": true,
+    "powershell.codeFormatting.whitespaceBeforeOpenBrace": true,
+    "powershell.codeFormatting.whitespaceBeforeOpenParen": true,
+    "powershell.codeFormatting.whitespaceAroundOperator": true,
+    "powershell.integratedConsole.showOnStartup": false,
+    "[powershell]": {
+        "debug.saveBeforeStart": "nonUntitledEditorsInActiveGroup",
+        "editor.semanticHighlighting.enabled": true,
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+        "editor.defaultFormatter": "ms-vscode.powershell"
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "gitlens.plusFeatures.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "gitlens.telemetry.enabled": false,
+    "git.confirmSync": false,
+    "files.autoSave": "afterDelay",
+    "files.trimTrailingWhitespace": true,
+    "docker.extension.enableComposeLanguageServer": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "worktrees": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "contributors": true,
+        "repositories": true,
+        "fileHistory": false,
+        "launchpad": false,
+        "searchAndCompare": false
+    },
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "[jsonc]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "terminal.integrated.initialHint": false,
+    "cmake.configureOnOpen": false,
+    "cmake.configureOnEdit": false,
+    "remote.downloadExtensionsLocally": true,
+    "remote.SSH.defaultExtensions": [
+        "asvetliakov.vscode-neovim"
+    ],
+    "windowColors.🌈 Theme": "light",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "Fira Code, Cascadia Code, Hack, Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "Fira Code, Cascadia Code, Hack, Consolas, 'Courier New', monospace",
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.persistentSessionScrollback": 1000
+}
