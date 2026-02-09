@@ -297,6 +297,7 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  },
-  "editor.editContext": false // fixes NSAutomaticPeriodSubstitutionEnabled on macOS, see https://github.com/microsoft/vscode/issues/134410#issuecomment-3168461936
+  }
+  // Seems to be causing issues with neovim extension. We probably shouldn't disable this, and instead we should disable NSAutomaticPeriodSubstitutionEnabled system-wide
+  // "editor.editContext": false  // fixes NSAutomaticPeriodSubstitutionEnabled on macOS, see https://github.com/microsoft/vscode/issues/134410#issuecomment-3168461936
 }
