@@ -9,7 +9,12 @@ $SettingsFile = Join-Path $Dotfiles "vscode\settings.json"
 Invoke-WebRequest -Uri "https://gist.githubusercontent.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf/raw/e1898331f1755aff3265d50e30106b8c6987c4f7/beastmode3.2.chatmode.md" -OutFile $BeastModeFile
 
 # Update settings.json with recommended Beast Mode settings
-$settings = Get-Content $SettingsFile | ConvertFrom-Json
+$content = Get-Content $SettingsFile -Raw
+# Remove comments
+$content = $content -replace '//.*', ''
+# Remove trailing commas
+$content = $content -replace ',\s*([}\]])', '$1'
+$settings = $content | ConvertFrom-Json
 $settings.'chat.tools.autoApprove' = $true
 $settings.'chat.agent.maxRequests' = 100
 $settings | ConvertTo-Json -Depth 10 | Set-Content $SettingsFile

@@ -3,17 +3,29 @@
 SCRIPT_DIR=$(dirname "$0")
 EXT_FILE="$SCRIPT_DIR/extensions.txt"
 
+# Check if VSCode CLI is available
+if ! command -v code >/dev/null 2>&1; then
+    echo "Error: VSCode CLI (code command) not found. Please install VSCode and enable 'code' command in PATH."
+    exit 1
+fi
+
 if [ "$1" = "export" ]; then
     code --list-extensions > "$EXT_FILE"
     python3 -c "
 import json
+import re
 import os
 ext_file = '$EXT_FILE'
 settings_file = '$SCRIPT_DIR/settings.json'
 with open(ext_file) as f:
     extensions = [line.strip() for line in f if line.strip()]
 with open(settings_file) as f:
-    settings = json.load(f)
+    content = f.read()
+# Remove comments
+content = re.sub(r'//.*', '', content)
+# Remove trailing commas
+content = re.sub(r',\s*([}\]])', r'\1', content)
+settings = json.loads(content)
 settings['remote.SSH.defaultExtensions'] = extensions
 with open(settings_file, 'w') as f:
     json.dump(settings, f, indent=4)

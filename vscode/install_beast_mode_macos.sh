@@ -13,10 +13,15 @@ curl -o "$BEAST_MODE_FILE" "https://gist.githubusercontent.com/burkeholland/88af
 # Update settings.json with recommended Beast Mode settings
 python3 -c "
 import json
-import os
+import re
 settings_file = '$SETTINGS_FILE'
 with open(settings_file) as f:
-    settings = json.load(f)
+    content = f.read()
+# Remove comments
+content = re.sub(r'//.*', '', content)
+# Remove trailing commas
+content = re.sub(r',\s*([}\]])', r'\1', content)
+settings = json.loads(content)
 settings['chat.tools.autoApprove'] = True
 settings['chat.agent.maxRequests'] = 100
 with open(settings_file, 'w') as f:
