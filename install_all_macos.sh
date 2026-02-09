@@ -2,6 +2,10 @@
 
 echo "Starting all-in-one dotfiles installer..."
 
+# Disable automatic period insertion on double-space
+echo "Disabling automatic period insertion on double-space..."
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
 # Get the script directory
 SCRIPT_DIR=$(dirname "$0")
 
