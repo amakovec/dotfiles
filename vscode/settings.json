@@ -73,7 +73,14 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true
+        "**/Thumbs.db": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/__pycache__": true,
+        "**/.venv": true,
+        "**/.env": true,
+        "**/.vscode": true
     },
     "explorer.compactFolders": false,
     "explorer.autoReveal": true,
@@ -116,10 +123,6 @@
     "python.analysis.typeCheckingMode": "standard",
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
-    "[ansible]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true
-    },
     "[yaml]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
@@ -132,10 +135,6 @@
             "other": true,
             "comments": false
         }
-    },
-    "files.associations": {
-        "*.yml": "ansible",
-        "*.yaml": "ansible"
     },
     "[shellscript]": {
         "files.eol": "\n",
@@ -286,5 +285,11 @@
     "editor.fontFamily": "Fira Code, Cascadia Code, Hack, Consolas, 'Courier New', monospace",
     "terminal.integrated.fontFamily": "Fira Code, Cascadia Code, Hack, Consolas, 'Courier New', monospace",
     "terminal.integrated.scrollback": 10000,
-    "terminal.integrated.persistentSessionScrollback": 1000
+    "terminal.integrated.persistentSessionScrollback": 1000,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    }
 }
