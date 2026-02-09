@@ -297,5 +297,6 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  }
+  },
+  "editor.editContext": false // fixes NSAutomaticPeriodSubstitutionEnabled on macOS, see https://github.com/microsoft/vscode/issues/134410#issuecomment-3168461936
 }
